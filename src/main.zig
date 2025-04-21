@@ -13,7 +13,7 @@ pub fn main() !void {
 
     const ids = [_]u32{ 1, 2, 3 };
     var counts = try lib.getStats(allocator, ids[0..], initial_counts);
-    defer counts.deinit();
+    defer counts.deinit(); // <- Seg-faults here!
 
     std.debug.print(
         "{}, {}",
