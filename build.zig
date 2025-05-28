@@ -2,7 +2,7 @@ const std = @import("std");
 
 pub fn build(b: *std.Build) void {
     const target = b.graph.host;
-    const optimize: std.builtin.OptimizeMode = .Debug;
+    const optimize: std.builtin.OptimizeMode = .ReleaseSafe;
 
     const lib_mod = b.createModule(.{
         .root_source_file = b.path("src/root.zig"),
